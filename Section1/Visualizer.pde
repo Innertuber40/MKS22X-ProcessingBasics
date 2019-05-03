@@ -10,11 +10,11 @@ class Visualizer {
   float x, y;
   float [] values;
   float [] speeds;
-  Visualizer(float x, float y) {
+  Visualizer(float x, float y, int size) {
     this.x = x;
     this.y = y;
-    values = new float[10];
-    speeds = new float[10];
+    values = new float[size];
+    speeds = new float[size];
     for (int i = 0; i < values.length; i++) {
       values[i] = random(-99, 99);
       speeds[i] = random(2);
