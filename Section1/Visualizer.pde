@@ -7,12 +7,14 @@ Visualizer v;
  Then you can make a method that changes the values each time the update is called. 
  */
 class Visualizer {
-  float x, y;
+  float x, y, w, l;
   float [] values;
   float [] speeds;
-  Visualizer(float x, float y, int size) {
+  Visualizer(float x, float y, int size, float wide, float le) {
     this.x = x;
     this.y = y;
+    w = wide;
+    l = le;
     values = new float[size];
     speeds = new float[size];
     for (int i = 0; i < values.length; i++) {
@@ -26,12 +28,12 @@ class Visualizer {
     //You can assume 10, but it would be even better 
     //if you could modify it to be larger increments.
     fill(255);
-    rect(x, y, 400, 200);
+    rect(x, y, w, l);
     //This is a 200x400 box.
     //The width of the visualizer is 400! This rect is the border
 
     //the line is the 0 y-value, the top is 100, the bottom is -100
-    line(x, y+100, x+400, y+100);
+    line(x, y+l/2, x+w, y+l/2);
 
     //You need to use a loop. You need to make the HEIGHT of the bars 
     //the values in the array.
@@ -46,7 +48,7 @@ class Visualizer {
       } else {
         fill(127.5*(1 - values[i]/100) - 127.5, 127.5 * values[i] / 100 + 127.5, 0);
       }
-      rect(x + (400 / values.length)*i, y + 100, (400 / values.length), -values[i]);
+      rect(x + (w / values.length) * i, y + l/2, w / values.length, -values[i] * l / 200);
     }
 
 
