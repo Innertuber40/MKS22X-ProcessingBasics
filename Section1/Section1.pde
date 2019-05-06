@@ -1,6 +1,6 @@
 void setup() {
-  size(200, 500);
-  v = new Visualizer(20, 20, 5, 100, 250);
+  size(900, 900);
+  v = new Visualizer(20, 20, 50, 800, 800);
 }
 void draw() {
   background(255);

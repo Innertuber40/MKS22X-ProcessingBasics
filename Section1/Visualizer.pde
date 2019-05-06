@@ -44,9 +44,9 @@ class Visualizer {
     //THESE ARE WRONG: They just illustrate how they could look
     for (int i = 0; i < values.length; i++) {
       if (values[i] <= 0) {
-        fill(127.5 * (-values[i]/100) + 127.5, 127.5*(1 + values[i]/100) - 127.5, 0);
+        fill(255, 255*(1 + values[i]/100), 0);
       } else {
-        fill(127.5*(1 - values[i]/100) - 127.5, 127.5 * values[i] / 100 + 127.5, 0);
+        fill(255*(1 - values[i]/100), 255, 0);
       }
       rect(x + (w / values.length) * i, y + l/2, w / values.length, -values[i] * l / 200);
     }
